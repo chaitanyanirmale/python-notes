@@ -88,11 +88,13 @@ for i in arr:
 print(count)
 
 #Find the index of the first occurrence
-arr = [4, 7, 2, 7, 9, 7, 1]
-target = 7
-
 def first_occurrence(arr, target):
   for i in range(len(arr)):
     if arr[i] == target:
       return i
   return -1
+
+arr = [4, 7, 2, 7, 9, 7, 1]
+target = 7
+
+first_occurrence(arr, target)
