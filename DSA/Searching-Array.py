@@ -52,7 +52,7 @@ def binary_search(arr, target):
 
 
 #LeetCode - 1st Problem 
-#Two Sum 
+#Two Sum - Time Complexity O(n^2)
 def two_sum(arr, target):
   for i in range(len(arr)):
     for j in range(i+1, len(arr)):
@@ -60,11 +60,11 @@ def two_sum(arr, target):
         return i, j
 
 arr = [2, 7, 11, 15] 
-print(two_sum(arr, 9))
+# print(two_sum(arr, 9))
 
-#This has the time complexity O(n^2)
+#This has the 
 #Solve by using dictionary
-def twoSum(self, nums, target):
+def twoSum( nums, target):
   seen = {}
   for i in range(len(nums)):
     complement = target - nums[i]
@@ -73,3 +73,67 @@ def twoSum(self, nums, target):
     seen[nums[i]] = i
 
 
+
+#LeetCode - 2nd Problem 
+#Contains Duplicate - Time Complexity O(n)
+class Solution:
+  def contain_duplicate(self, nums):
+    seen = set()
+    for num in nums:
+      if num in seen:
+        return True
+      seen.add(num)
+    return False
+
+solution = Solution()
+result = solution.contain_duplicate([1, 2, 3, 2])
+# print(result)
+
+
+#Best time to Buy and Sell Stocks
+def maxProfit(prices):
+  min_price = prices[0]
+  max_profit = 0
+  for price in prices:
+    if price < min_price:
+      min_price = price
+    profit = price - min_price
+    if profit > max_profit:
+      max_profit = profit
+
+  return max_profit
+
+prices = [7, 1, 5, 3, 4, 6]
+# print(maxProfit(prices))
+
+def removeDuplicates(arr):
+  if len(arr) == 0:
+    return 0
+  i = 0
+  for j in range(1, len(arr)):
+    if arr[j] != arr[i]:
+      i += 1
+      arr[i] = arr[j]
+  return i + 1
+
+arr = [0, 0, 1, 1, 2, 3, 4, 4]
+print(removeDuplicates(arr))
+
+
+#Merge Sorted Arrays
+def merge(nums1, m, nums2, n):
+  i = m - 1
+  j = n - 1
+  k = m + n - 1
+  while i >= 0 and j >= 0:
+    if nums1[i] > nums2[j]:
+      nums1[k] = nums1[i]
+      i -= 1
+    else: 
+      nums1[k] = nums2[j]
+      j -= 1
+    k -= 1
+  while j >= 0:
+    nums1[k] = nums2[j]
+    j -= 1
+    k -= 1
