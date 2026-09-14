@@ -117,16 +117,10 @@ class Animal:
     print('Animal is eating')
 
 class Dog(Animal):
-  def eat(self):
-    print('Dog is eating')
-
   def sound(self):
     print("Dog's sound")
 
 class Cat(Animal):
-  def eat(self):
-    print('Cat is eating')
-
   def sound(self):
     print("Cat's sound")
 
