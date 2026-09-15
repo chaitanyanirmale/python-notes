@@ -1,0 +1,16 @@
+Name: Chaitanya
+Course: MCA
+Language: Python
+Goal: Software Developer
+Name: Chaitanya 
+Course: Python
+Name: Ajinkya 
+Course: Java
+Name: Rohit 
+Course: React
+Name: Ranjit 
+Course: JavaScript
+
+Name: Rahul 
+Course: Node Js
+
