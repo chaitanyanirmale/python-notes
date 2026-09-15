@@ -1,7 +1,5 @@
 # File Handling -> File handling means creating, reading, writing, updating, and managing files using Python.
 
-
-
 # r -> Read
 # w -> Write
 # a -> Append
@@ -117,4 +115,29 @@ print(os.path.getsize("data.txt"))
 # getsize() returns the file size in bytes.
 
 #------------------------------------------------
+employees = [
+    "Amit - Developer - 40000",
+    "Rahul - Tester - 35000",
+    "Sneha - Manager - 60000"
+]
 
+with open("employees.txt", "w") as file:
+  for employee in employees:
+    file.write(employee + "\n")
+
+with open("employees.txt", "r") as file:
+  for employee in file:
+    print(employee.strip())
+
+
+with open("employees.txt", "r") as file:
+  employees = [line.strip() for line in file]
+
+print(employees)
+#----------------------------------------------
+def save_employee(name, role, salary):
+  with open("employees.txt", "a") as file:
+    file.write(f"{name} - {role} - {salary}\n")
+
+save_employee("Amit", "Developer", 40000)
+save_employee("Rahul", "Tester", 35000)
