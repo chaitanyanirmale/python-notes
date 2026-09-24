@@ -106,6 +106,7 @@ def maxProfit(prices):
 prices = [7, 1, 5, 3, 4, 6]
 # print(maxProfit(prices))
 
+
 def removeDuplicates(arr):
   if len(arr) == 0:
     return 0
@@ -117,7 +118,7 @@ def removeDuplicates(arr):
   return i + 1
 
 arr = [0, 0, 1, 1, 2, 3, 4, 4]
-print(removeDuplicates(arr))
+# print(removeDuplicates(arr))
 
 
 #Merge Sorted Arrays
@@ -137,3 +138,59 @@ def merge(nums1, m, nums2, n):
     nums1[k] = nums2[j]
     j -= 1
     k -= 1
+
+
+# Majority Element
+def majorityElement(nums):
+  count = {}
+  for num in nums:
+    count[num] = count.get(num, 0) + 1
+    if count[num] > len(nums) // 2:
+      return num
+
+nums = [2,2,1,1,1,2,2]
+# print(majorityElement(nums))
+
+
+# Intersection of Two Arrays
+def intersection(nums1, nums2):
+  set1 = set(nums1)
+  set2 = set(nums2)
+
+  return list(set1 & set2)
+
+nums1 = [4, 9, 5]
+nums2 = [4, 9, 9, 8 , 4]
+# print(intersection(nums1, nums2))
+
+
+# Rotate Array
+def rotate(nums, k):
+  k = k % len(nums)
+  nums[:] = nums[-k:] + nums[:-k]
+  return nums
+
+nums_2 = [1,2,3,4,5,6,7]
+# print(rotate(nums_2, 3))
+
+
+# Find missing number
+def missingNumber(nums):
+  n = len(nums)
+  expected_sum = n * (n + 1) // 2
+  actual_sum = sum(nums)
+  return expected_sum - actual_sum
+
+numbers = [1, 2, 0, 4, 5]
+# print(missingNumber(numbers))
+
+
+# Single Number 
+def singleNumber(nums):
+  result = 0
+  for num in nums:
+    result = result ^ num
+
+  return result
+
+# print(singleNumber([1, 2, 4, 1, 2]))
